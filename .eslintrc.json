@@ -1,0 +1,123 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*",
+    "node_modules/**/*",
+    "dist/**/*",
+    "version.ts",
+    "src/assets/**/*",
+    "types/**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "tsconfig.json",
+        "sourceType": "module"
+      },
+      "plugins": [
+        "import",
+        "simple-import-sort",
+        "unused-imports",
+        "eslint-plugin-jsdoc",
+        "@angular-eslint/eslint-plugin",
+        "@angular-eslint/eslint-plugin-template",
+        "eslint-plugin-prefer-arrow",
+        "@typescript-eslint"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "eslint:recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "settings": {
+        "import/parsers": {
+          "@typescript-eslint/parser": [
+            ".ts"
+          ]          
+        },
+        "import/resolver": {
+          "typescript": {
+            "alwaysTryTypes": true
+          }
+        }
+      },
+      "rules": {
+        "eqeqeq": "warn",
+        "@typescript-eslint/unbound-method": [
+          "error",
+          {
+            "ignoreStatic": true
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "ja",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "ja",
+            "style": "kebab-case"
+          }
+        ],
+        "semi": "warn",
+        "quotes": [
+          "warn",
+          "single"
+        ],
+        "indent": [
+          "warn",
+          2,
+          { "SwitchCase": 1 }
+        ],
+        "no-trailing-spaces": "warn",
+        "unused-imports/no-unused-imports": "warn",
+        "simple-import-sort/imports": [
+          "warn",
+          {
+            "groups": [
+              [
+                "^\\u0000"
+              ],
+              [
+                "^@?\\w"
+              ],
+              [
+                "^"
+              ],
+              [
+                "^\\.."
+              ],
+              [
+                "^\\."
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@angular-eslint/template/recommended"
+      ],
+      "rules": {}
+    }
+  ]
+}

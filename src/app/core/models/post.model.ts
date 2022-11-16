@@ -1,9 +1,11 @@
-import { PostComment } from "./post-comment.model";
-import { User } from "./user.model";
+import { User } from './user.model';
 
-export interface Post {
+export interface Post extends PostComment {
+  id: number;
+}
+
+export interface PostComment {
   user: User;
   message: string;
-  date: Date;
   comments: PostComment[];
 }

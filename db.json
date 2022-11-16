@@ -1,0 +1,74 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "user": {
+        "firstName": "John",
+        "lastName": "John"
+      },
+      "message": "It works!",
+      "comments": [
+        {
+          "user": {
+            "firstName": "Aybe",
+            "lastName": "Ce"
+          },
+          "message": "Congrats!",
+          "comments": [
+            {
+              "user": {
+                "firstName": "John",
+                "lastName": "John"
+              },
+              "message": "Thanks!",
+              "comments": []
+            }
+          ]
+        },
+        {
+          "user": {
+            "firstName": "Aurene",
+            "lastName": "Scion"
+          },
+          "message": "Thats great!",
+          "comments": [
+            {
+              "user": {
+                "firstName": "Rytlock",
+                "lastName": "Brimstone"
+              },
+              "message": "I Agree!",
+              "comments": []
+            },
+            {
+              "user": {
+                "firstName": "Caithe",
+                "lastName": "Sylvari"
+              },
+              "message": "Yup",
+              "comments": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "user": {
+        "firstName": "Test",
+        "lastName": "One"
+      },
+      "message": "Stormwind City (a.k.a. New Stormwind or simply Stormwind), located north of Elwynn Forest on Azeroth region's northwest coast, is the capital city of the kingdom of Stormwind and the largest human city on Azeroth.",
+      "comments": [
+        {
+          "user": {
+            "firstName": "Test",
+            "lastName": "Two"
+          },
+          "message": "No city better demonstrates human determination than Stormwind. Destroyed during the Horde's initial invasion of Azeroth, Stormwind was painstakingly reconstructed by the Stonemasons' Guild after the Second War.",
+          "comments": []
+        }
+      ]
+    }
+  ]
+}
