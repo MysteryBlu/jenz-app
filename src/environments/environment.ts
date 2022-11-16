@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'my-json-server.typicode.com/MysteryBlu/jenz-app'
+  api: 'https://my-json-server.typicode.com/MysteryBlu/jenz-app'
 };
 
 /*

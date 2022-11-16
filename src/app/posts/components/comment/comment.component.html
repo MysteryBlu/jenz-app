@@ -1,0 +1,11 @@
+<div>
+  <div>
+    {{ data.user.firstName }} {{ data.user.lastName }}
+  </div>
+  <div>
+    {{ data.message }}
+  </div>
+  <div *ngIf="data.comments.length > 0">
+    <ja-comment *ngFor="let comment of data.comments" [data]="comment"></ja-comment>
+  </div>
+</div>
