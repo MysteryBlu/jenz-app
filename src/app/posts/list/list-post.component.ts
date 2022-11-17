@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { FormControl } from '@angular/forms';
+import { debounceTime, map, Observable } from 'rxjs';
 import { PostService } from 'src/app/core/services/post.service';
 
 import { Post } from '../../core/models/post.model';
@@ -11,8 +12,27 @@ import { Post } from '../../core/models/post.model';
 })
 export class ListPostComponent {
   posts: Observable<Post[]>;
+  filteredPosts: Observable<Post[]>;
+  search = new FormControl<string>('');
 
   constructor(service: PostService) {
     this.posts = service.getAll();
+    this.filteredPosts = this.posts;
+
+    this.search.valueChanges.pipe(
+      debounceTime(500)
+    ).subscribe(value => {
+      if (value) {
+        this.filteredPosts = this.posts.pipe(map(posts => {
+          return posts.filter(p => this.concatName(p.user.firstName, p.user.lastName).toLocaleLowerCase().indexOf(value) >= 0);
+        }));
+      } else {
+        this.filteredPosts = this.posts;
+      }
+    });
+  }
+
+  concatName(firstName: string, lastName: string): string {
+    return firstName + ' ' + lastName;
   }
 }

@@ -1,1 +1,8 @@
-<ja-post *ngFor="let post of posts | async" [data]="post"></ja-post>
+<mat-form-field class="search" [floatLabel]="'never'">
+  <input matInput [formControl]="search" placeholder="Search">
+</mat-form-field>
+<div class="list">
+  <div class="list-post" *ngFor="let post of filteredPosts | async">
+    <ja-post [data]="post"></ja-post>
+  </div> 
+</div>

@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'variables.scss';
+@import "../../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.view {
+  height: 100%;
+  margin: 0;
+  background: $color-light-gray;
+}
+
+p, div {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
