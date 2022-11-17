@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { debounceTime, map, Observable } from 'rxjs';
 import { PostService } from 'src/app/core/services/post.service';
 
@@ -15,8 +16,8 @@ export class ListPostComponent {
   filteredPosts: Observable<Post[]>;
   search = new FormControl<string>('');
 
-  constructor(service: PostService) {
-    this.posts = service.getAll();
+  constructor(private service: PostService, private router: Router) {
+    this.posts = this.service.getAll();
     this.filteredPosts = this.posts;
 
     this.search.valueChanges.pipe(
@@ -34,5 +35,9 @@ export class ListPostComponent {
 
   concatName(firstName: string, lastName: string): string {
     return firstName + ' ' + lastName;
+  }
+
+  viewPost(id: number) {
+    void this.router.navigate([`post/${id}`]);
   }
 }

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { PostComment } from '../../../core/models/post.model';
+import { Post } from '../../../core/models/post.model';
 
 @Component({
   selector: 'ja-post',
@@ -8,5 +8,5 @@ import { PostComment } from '../../../core/models/post.model';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent {
-  @Input() data!: PostComment;
+  @Input() data!: Post | null;
 }

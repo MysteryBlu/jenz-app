@@ -1,8 +1,8 @@
-<div>
-  <div>
-    {{ data.user.firstName }} {{ data.user.lastName }}
-  </div>
-  <div>
+<div class="post" *ngIf="data">
+  <div class="post-user">
+    <div class="post-user-name">
+      {{ data.user.firstName }} {{ data.user.lastName }}
+    </div>
     {{ data.message }}
   </div>
   <div *ngIf="data.comments.length > 0">

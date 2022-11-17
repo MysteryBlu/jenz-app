@@ -15,7 +15,7 @@ export class PostService {
     return this.http.get<Post[]>(`${environment.api}/posts`);
   }
 
-  get(id: string): Observable<Post[]> {
-    return this.http.get<Post[]>(`${environment.api}/post/${id}`);
+  get(id: number): Observable<Post> {
+    return this.http.get<Post>(`${environment.api}/posts/${id}`);
   }
 }

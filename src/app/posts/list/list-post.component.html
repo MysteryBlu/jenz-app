@@ -3,6 +3,6 @@
 </mat-form-field>
 <div class="list">
   <div class="list-post" *ngFor="let post of filteredPosts | async">
-    <ja-post [data]="post"></ja-post>
+    <ja-post [data]="post" (click)="viewPost(post.id)"></ja-post>
   </div> 
 </div>

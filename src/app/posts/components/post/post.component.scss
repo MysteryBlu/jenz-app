@@ -1,0 +1,12 @@
+.post {
+  padding: 10px;
+
+  &-user {
+    font-size: 20px;
+    margin-bottom: 10px;
+
+    &-name {
+      font-weight: bold;
+    }
+  }
+}
