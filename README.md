@@ -1,27 +1,41 @@
 # JenzApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
+This is a test project using Angular 14 for Jenz interview process
 
-## Development server
+## Requirements
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Angular 14+  
+Node 16.10+  
 
-## Code scaffolding
+## Setup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Clone the repo
 
-## Build
+```shell
+git clone https://github.com/bryanforbes/intern-angular
+cd intern-angular
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Install npm packages
 
-## Running unit tests
+Install the `npm` packages described in the `package.json` and verify that it works:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```shell
+npm install
+```
 
-## Running end-to-end tests
+### Running development server
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```shell
+npm start
+```
+The `npm start` command builds (compiles TypeScript and copies assets) the application into `dist/`, watches for changes to the source files, and runs `lite-server` on port `4200`.
 
-## Further help
+Navigate to `localhost:4200` to view the app
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#### npm scripts
+
+These are the most useful commands defined in `package.json`:
+
+* `npm start` - runs the TypeScript compiler, asset copier, and a server at the same time, all three in "watch mode".
+* `npm run lint` - runs `eslint` on the project files.
